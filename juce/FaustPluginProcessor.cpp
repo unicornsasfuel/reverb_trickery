@@ -14567,72 +14567,61 @@ class mydsp : public base_dsp {
 		ui_interface->openVerticalBox("Reverb Trickery");
 		ui_interface->declare(0, "0", "");
 		ui_interface->openHorizontalBox("Trick Selection");
-		ui_interface->declare(&fCheckbox3, "0", "");
+		ui_interface->declare(&fCheckbox3, "1", "");
 		ui_interface->addCheckButton("Octave", &fCheckbox3);
-		ui_interface->declare(&fCheckbox2, "1", "");
+		ui_interface->declare(&fCheckbox2, "2", "");
 		ui_interface->addCheckButton("Distort", &fCheckbox2);
-		ui_interface->declare(&fCheckbox1, "2", "");
-		ui_interface->addCheckButton("Band", &fCheckbox1);
 		ui_interface->declare(&fCheckbox0, "2", "");
 		ui_interface->addCheckButton("Gate", &fCheckbox0);
+		ui_interface->declare(&fCheckbox1, "3", "");
+		ui_interface->addCheckButton("Band", &fCheckbox1);
 		ui_interface->closeBox();
 		ui_interface->declare(0, "1", "");
-		ui_interface->openTabBox("Trick Parameters");
+		ui_interface->openTabBox("Parameters");
 		ui_interface->declare(0, "0", "");
+		ui_interface->openVerticalBox("Reverb");
+		ui_interface->declare(&fHslider10, "tooltip", "Adjust how much faster the stereo reverb decays. (e.g. 0 is stereo reverb, 50 is stereo reverb that fades to mono halfway through its tail, 100 is mono reverb.)");
+		ui_interface->addHorizontalSlider("Narrowing %", &fHslider10, 0.0f, 0.0f, 100.0f, 1.0f);
+		ui_interface->declare(&fHslider9, "2", "");
+		ui_interface->addHorizontalSlider("Sustain", &fHslider9, 50.0f, 0.0f, 100.0f, 1.0f);
+		ui_interface->declare(&fHslider0, "3", "");
+		ui_interface->addHorizontalSlider("Wet %", &fHslider0, 0.0f, 0.0f, 100.0f, 1.0f);
+		ui_interface->closeBox();
+		ui_interface->declare(0, "1", "");
 		ui_interface->openVerticalBox("Octave");
 		ui_interface->declare(&fHslider5, "0", "");
 		ui_interface->declare(&fHslider5, "style", "menu{'Up':0;'Down':1}");
 		ui_interface->addHorizontalSlider("Direction", &fHslider5, 0.0f, 0.0f, 1.0f, 1.0f);
 		ui_interface->closeBox();
-		ui_interface->declare(0, "1", "");
-		ui_interface->openHorizontalBox("Distort");
+		ui_interface->declare(0, "2", "");
+		ui_interface->openVerticalBox("Distort");
 		ui_interface->declare(&fHslider4, "0", "");
-		ui_interface->declare(&fHslider4, "style", "knob");
 		ui_interface->addHorizontalSlider("Drive", &fHslider4, 5.0f, 0.0f, 100.0f, 0.100000001f);
 		ui_interface->closeBox();
 		ui_interface->declare(0, "2", "");
-		ui_interface->openHorizontalBox("Band");
-		ui_interface->declare(&fHslider6, "0", "");
-		ui_interface->declare(&fHslider6, "style", "knob");
-		ui_interface->declare(&fHslider6, "unit", "Hz");
-		ui_interface->addHorizontalSlider("Low cutoff", &fHslider6, 20.0f, 20.0f, 20000.0f, 1.0f);
-		ui_interface->declare(&fHslider3, "1", "");
-		ui_interface->declare(&fHslider3, "style", "knob");
-		ui_interface->declare(&fHslider3, "unit", "Hz");
-		ui_interface->addHorizontalSlider("High cutoff", &fHslider3, 20000.0f, 20.0f, 20000.0f, 1.0f);
-		ui_interface->closeBox();
-		ui_interface->declare(0, "2", "");
-		ui_interface->openHorizontalBox("Gate");
+		ui_interface->openVerticalBox("Gate");
 		ui_interface->declare(&fHslider7, "0", "");
-		ui_interface->declare(&fHslider7, "style", "knob");
 		ui_interface->declare(&fHslider7, "unit", "dB");
 		ui_interface->addHorizontalSlider("Threshold", &fHslider7, -30.0f, -90.0f, 0.0f, 1.0f);
 		ui_interface->declare(&fHslider1, "1", "");
-		ui_interface->declare(&fHslider1, "style", "knob");
 		ui_interface->declare(&fHslider1, "unit", "ms");
 		ui_interface->addHorizontalSlider("Attack", &fHslider1, 5.0f, 0.0f, 500.0f, 0.100000001f);
 		ui_interface->declare(&fHslider8, "2", "");
-		ui_interface->declare(&fHslider8, "style", "knob");
 		ui_interface->declare(&fHslider8, "unit", "ms");
 		ui_interface->addHorizontalSlider("Hold", &fHslider8, 5.0f, 0.0f, 1000.0f, 0.100000001f);
 		ui_interface->declare(&fHslider2, "3", "");
-		ui_interface->declare(&fHslider2, "style", "knob");
 		ui_interface->declare(&fHslider2, "unit", "ms");
 		ui_interface->addHorizontalSlider("Release", &fHslider2, 5.0f, 0.0f, 1000.0f, 0.100000001f);
 		ui_interface->closeBox();
+		ui_interface->declare(0, "3", "");
+		ui_interface->openVerticalBox("Band");
+		ui_interface->declare(&fHslider6, "0", "");
+		ui_interface->declare(&fHslider6, "unit", "Hz");
+		ui_interface->addHorizontalSlider("Low cutoff", &fHslider6, 20.0f, 20.0f, 20000.0f, 1.0f);
+		ui_interface->declare(&fHslider3, "1", "");
+		ui_interface->declare(&fHslider3, "unit", "Hz");
+		ui_interface->addHorizontalSlider("High cutoff", &fHslider3, 20000.0f, 20.0f, 20000.0f, 1.0f);
 		ui_interface->closeBox();
-		ui_interface->declare(0, "2", "");
-		ui_interface->openHorizontalBox("Reverb Parameters");
-		ui_interface->declare(&fHslider9, "2", "");
-		ui_interface->declare(&fHslider9, "style", "knob");
-		ui_interface->addHorizontalSlider("Sustain", &fHslider9, 50.0f, 0.0f, 100.0f, 1.0f);
-		ui_interface->declare(&fHslider10, "4", "");
-		ui_interface->declare(&fHslider10, "style", "knob");
-		ui_interface->declare(&fHslider10, "tooltip", "Adjust how much faster the stereo reverb decays. (e.g. 0 is stereo reverb, 50 is stereo reverb that fades to mono halfway through its tail, 100 is mono reverb.)");
-		ui_interface->addHorizontalSlider("Narrowing %", &fHslider10, 0.0f, 0.0f, 100.0f, 1.0f);
-		ui_interface->declare(&fHslider0, "4", "");
-		ui_interface->declare(&fHslider0, "style", "knob");
-		ui_interface->addHorizontalSlider("Wet %", &fHslider0, 0.0f, 0.0f, 100.0f, 1.0f);
 		ui_interface->closeBox();
 		ui_interface->closeBox();
 	}
@@ -14846,36 +14835,36 @@ class mydsp : public base_dsp {
 
 	FAUST_ADDCHECKBOX("Reverb Trickery/[0]Trick Selection/Octave", fCheckbox3);
 	FAUST_ADDCHECKBOX("Reverb Trickery/[0]Trick Selection/Distort", fCheckbox2);
-	FAUST_ADDCHECKBOX("Reverb Trickery/[0]Trick Selection/Band", fCheckbox1);
 	FAUST_ADDCHECKBOX("Reverb Trickery/[0]Trick Selection/Gate", fCheckbox0);
-	FAUST_ADDHORIZONTALSLIDER("Reverb Trickery/[1]Trick Parameters/[0]Octave/Direction", fHslider5, 0.0f, 0.0f, 1.0f, 1.0f);
-	FAUST_ADDHORIZONTALSLIDER("Reverb Trickery/[1]Trick Parameters/[1]Distort/Drive", fHslider4, 5.0f, 0.0f, 100.0f, 0.10000000000000001f);
-	FAUST_ADDHORIZONTALSLIDER("Reverb Trickery/[1]Trick Parameters/[2]Band/Low cutoff", fHslider6, 20.0f, 20.0f, 20000.0f, 1.0f);
-	FAUST_ADDHORIZONTALSLIDER("Reverb Trickery/[1]Trick Parameters/[2]Band/High cutoff", fHslider3, 20000.0f, 20.0f, 20000.0f, 1.0f);
-	FAUST_ADDHORIZONTALSLIDER("Reverb Trickery/[1]Trick Parameters/[2]Gate/Threshold", fHslider7, -30.0f, -90.0f, 0.0f, 1.0f);
-	FAUST_ADDHORIZONTALSLIDER("Reverb Trickery/[1]Trick Parameters/[2]Gate/Attack", fHslider1, 5.0f, 0.0f, 500.0f, 0.10000000000000001f);
-	FAUST_ADDHORIZONTALSLIDER("Reverb Trickery/[1]Trick Parameters/[2]Gate/Hold", fHslider8, 5.0f, 0.0f, 1000.0f, 0.10000000000000001f);
-	FAUST_ADDHORIZONTALSLIDER("Reverb Trickery/[1]Trick Parameters/[2]Gate/Release", fHslider2, 5.0f, 0.0f, 1000.0f, 0.10000000000000001f);
-	FAUST_ADDHORIZONTALSLIDER("Reverb Trickery/[2]Reverb Parameters/Sustain", fHslider9, 50.0f, 0.0f, 100.0f, 1.0f);
-	FAUST_ADDHORIZONTALSLIDER("Reverb Trickery/[2]Reverb Parameters/Narrowing %", fHslider10, 0.0f, 0.0f, 100.0f, 1.0f);
-	FAUST_ADDHORIZONTALSLIDER("Reverb Trickery/[2]Reverb Parameters/Wet %", fHslider0, 0.0f, 0.0f, 100.0f, 1.0f);
+	FAUST_ADDCHECKBOX("Reverb Trickery/[0]Trick Selection/Band", fCheckbox1);
+	FAUST_ADDHORIZONTALSLIDER("Reverb Trickery/[1]Parameters/[0]Reverb/Narrowing %", fHslider10, 0.0f, 0.0f, 100.0f, 1.0f);
+	FAUST_ADDHORIZONTALSLIDER("Reverb Trickery/[1]Parameters/[0]Reverb/Sustain", fHslider9, 50.0f, 0.0f, 100.0f, 1.0f);
+	FAUST_ADDHORIZONTALSLIDER("Reverb Trickery/[1]Parameters/[0]Reverb/Wet %", fHslider0, 0.0f, 0.0f, 100.0f, 1.0f);
+	FAUST_ADDHORIZONTALSLIDER("Reverb Trickery/[1]Parameters/[1]Octave/Direction", fHslider5, 0.0f, 0.0f, 1.0f, 1.0f);
+	FAUST_ADDHORIZONTALSLIDER("Reverb Trickery/[1]Parameters/[2]Distort/Drive", fHslider4, 5.0f, 0.0f, 100.0f, 0.10000000000000001f);
+	FAUST_ADDHORIZONTALSLIDER("Reverb Trickery/[1]Parameters/[2]Gate/Threshold", fHslider7, -30.0f, -90.0f, 0.0f, 1.0f);
+	FAUST_ADDHORIZONTALSLIDER("Reverb Trickery/[1]Parameters/[2]Gate/Attack", fHslider1, 5.0f, 0.0f, 500.0f, 0.10000000000000001f);
+	FAUST_ADDHORIZONTALSLIDER("Reverb Trickery/[1]Parameters/[2]Gate/Hold", fHslider8, 5.0f, 0.0f, 1000.0f, 0.10000000000000001f);
+	FAUST_ADDHORIZONTALSLIDER("Reverb Trickery/[1]Parameters/[2]Gate/Release", fHslider2, 5.0f, 0.0f, 1000.0f, 0.10000000000000001f);
+	FAUST_ADDHORIZONTALSLIDER("Reverb Trickery/[1]Parameters/[3]Band/Low cutoff", fHslider6, 20.0f, 20.0f, 20000.0f, 1.0f);
+	FAUST_ADDHORIZONTALSLIDER("Reverb Trickery/[1]Parameters/[3]Band/High cutoff", fHslider3, 20000.0f, 20.0f, 20000.0f, 1.0f);
 
 	#define FAUST_LIST_ACTIVES(p) \
 		p(CHECKBOX, Octave, "Reverb Trickery/[0]Trick Selection/Octave", fCheckbox3, 0.0f, 0.0f, 1.0f, 1.0f) \
 		p(CHECKBOX, Distort, "Reverb Trickery/[0]Trick Selection/Distort", fCheckbox2, 0.0f, 0.0f, 1.0f, 1.0f) \
-		p(CHECKBOX, Band, "Reverb Trickery/[0]Trick Selection/Band", fCheckbox1, 0.0f, 0.0f, 1.0f, 1.0f) \
 		p(CHECKBOX, Gate, "Reverb Trickery/[0]Trick Selection/Gate", fCheckbox0, 0.0f, 0.0f, 1.0f, 1.0f) \
-		p(HORIZONTALSLIDER, Direction, "Reverb Trickery/[1]Trick Parameters/[0]Octave/Direction", fHslider5, 0.0f, 0.0f, 1.0f, 1.0f) \
-		p(HORIZONTALSLIDER, Drive, "Reverb Trickery/[1]Trick Parameters/[1]Distort/Drive", fHslider4, 5.0f, 0.0f, 100.0f, 0.10000000000000001f) \
-		p(HORIZONTALSLIDER, Low_cutoff, "Reverb Trickery/[1]Trick Parameters/[2]Band/Low cutoff", fHslider6, 20.0f, 20.0f, 20000.0f, 1.0f) \
-		p(HORIZONTALSLIDER, High_cutoff, "Reverb Trickery/[1]Trick Parameters/[2]Band/High cutoff", fHslider3, 20000.0f, 20.0f, 20000.0f, 1.0f) \
-		p(HORIZONTALSLIDER, Threshold, "Reverb Trickery/[1]Trick Parameters/[2]Gate/Threshold", fHslider7, -30.0f, -90.0f, 0.0f, 1.0f) \
-		p(HORIZONTALSLIDER, Attack, "Reverb Trickery/[1]Trick Parameters/[2]Gate/Attack", fHslider1, 5.0f, 0.0f, 500.0f, 0.10000000000000001f) \
-		p(HORIZONTALSLIDER, Hold, "Reverb Trickery/[1]Trick Parameters/[2]Gate/Hold", fHslider8, 5.0f, 0.0f, 1000.0f, 0.10000000000000001f) \
-		p(HORIZONTALSLIDER, Release, "Reverb Trickery/[1]Trick Parameters/[2]Gate/Release", fHslider2, 5.0f, 0.0f, 1000.0f, 0.10000000000000001f) \
-		p(HORIZONTALSLIDER, Sustain, "Reverb Trickery/[2]Reverb Parameters/Sustain", fHslider9, 50.0f, 0.0f, 100.0f, 1.0f) \
-		p(HORIZONTALSLIDER, Narrowing_%, "Reverb Trickery/[2]Reverb Parameters/Narrowing %", fHslider10, 0.0f, 0.0f, 100.0f, 1.0f) \
-		p(HORIZONTALSLIDER, Wet_%, "Reverb Trickery/[2]Reverb Parameters/Wet %", fHslider0, 0.0f, 0.0f, 100.0f, 1.0f) \
+		p(CHECKBOX, Band, "Reverb Trickery/[0]Trick Selection/Band", fCheckbox1, 0.0f, 0.0f, 1.0f, 1.0f) \
+		p(HORIZONTALSLIDER, Narrowing_%, "Reverb Trickery/[1]Parameters/[0]Reverb/Narrowing %", fHslider10, 0.0f, 0.0f, 100.0f, 1.0f) \
+		p(HORIZONTALSLIDER, Sustain, "Reverb Trickery/[1]Parameters/[0]Reverb/Sustain", fHslider9, 50.0f, 0.0f, 100.0f, 1.0f) \
+		p(HORIZONTALSLIDER, Wet_%, "Reverb Trickery/[1]Parameters/[0]Reverb/Wet %", fHslider0, 0.0f, 0.0f, 100.0f, 1.0f) \
+		p(HORIZONTALSLIDER, Direction, "Reverb Trickery/[1]Parameters/[1]Octave/Direction", fHslider5, 0.0f, 0.0f, 1.0f, 1.0f) \
+		p(HORIZONTALSLIDER, Drive, "Reverb Trickery/[1]Parameters/[2]Distort/Drive", fHslider4, 5.0f, 0.0f, 100.0f, 0.10000000000000001f) \
+		p(HORIZONTALSLIDER, Threshold, "Reverb Trickery/[1]Parameters/[2]Gate/Threshold", fHslider7, -30.0f, -90.0f, 0.0f, 1.0f) \
+		p(HORIZONTALSLIDER, Attack, "Reverb Trickery/[1]Parameters/[2]Gate/Attack", fHslider1, 5.0f, 0.0f, 500.0f, 0.10000000000000001f) \
+		p(HORIZONTALSLIDER, Hold, "Reverb Trickery/[1]Parameters/[2]Gate/Hold", fHslider8, 5.0f, 0.0f, 1000.0f, 0.10000000000000001f) \
+		p(HORIZONTALSLIDER, Release, "Reverb Trickery/[1]Parameters/[2]Gate/Release", fHslider2, 5.0f, 0.0f, 1000.0f, 0.10000000000000001f) \
+		p(HORIZONTALSLIDER, Low_cutoff, "Reverb Trickery/[1]Parameters/[3]Band/Low cutoff", fHslider6, 20.0f, 20.0f, 20000.0f, 1.0f) \
+		p(HORIZONTALSLIDER, High_cutoff, "Reverb Trickery/[1]Parameters/[3]Band/High cutoff", fHslider3, 20000.0f, 20.0f, 20000.0f, 1.0f) \
 
 	#define FAUST_LIST_PASSIVES(p) \
 
