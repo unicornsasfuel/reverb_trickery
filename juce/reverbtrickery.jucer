@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <JUCERPROJECT id="L9dULy" name="Reverb Trickery" projectType="audioplug" version="1.0.0"
-              bundleIdentifier="com.grame.reverbtrickery" includeBinaryInAppConfig="1"
+              bundleIdentifier="com.evermind.reverbtrickery" includeBinaryInAppConfig="1"
               buildVST="0" buildVST3="1" buildAU="1" buildAUv3="1" buildRTAS="0"
               buildAAX="0" buildStandalone="0" pluginName="Reverb Trickery"
-              pluginDesc="reverbtrickery" pluginManufacturer="GRAME" pluginManufacturerCode="Manu"
-              pluginCode="7dd6" pluginChannelConfigs="" pluginIsSynth="0" pluginWantsMidiIn="0"
+              pluginDesc="reverbtrickery" pluginManufacturer="Evermind" pluginManufacturerCode="Ever"
+              pluginCode="Trix" pluginChannelConfigs="" pluginIsSynth="0" pluginWantsMidiIn="0"
               pluginProducesMidiOut="0" pluginIsMidiEffectPlugin="0" pluginEditorRequiresKeys="0"
               pluginAUExportPrefix="reverbtrickeryAU" pluginRTASCategory="8,8192"
               aaxIdentifier="com.evermind.reverbtrickery" pluginAAXCategory="8,8192"
